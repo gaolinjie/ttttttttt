@@ -1,0 +1,26 @@
+{
+    "Summary":[
+        {
+            "title":"Introduction",
+            "link":"",
+            "file":"README.md"
+        },
+        {
+            "title":"Array",
+            "link":"array/",
+            "file":"array/README.md",
+            "child":[
+                {
+                    "title":"Remove Element",
+                    "link":"array/remove_element",
+                    "file":"array/remove_element.md"
+                },
+                {
+                    "title":"Remove Duplicates from Sorted Array",
+                    "link":"array/remove_duplicates_from_sorted_array",
+                    "file":"array/remove_duplicates_from_sorted_array.md"
+                }
+            ]
+        }
+    ]
+}

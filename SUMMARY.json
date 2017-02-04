@@ -105,6 +105,48 @@
                     "file":"tree/binary_tree_depth_order_traversal.md"
                 }
             ]
+        },
+        {
+            "title":"Dynamic Programming",
+            "link":"dynamic_programming/",
+            "file":"dynamic_programming/README.md",
+            "child":[
+                {
+                    "title":"Best Time To Buy And Sell Stock",
+                    "link":"dynamic_programming/best_time_to_buy_and_sell_stock",
+                    "file":"dynamic_programming/best_time_to_buy_and_sell_stock.md"
+                },
+                {
+                    "title":"Unique Paths",
+                    "link":"dynamic_programming/unique_paths",
+                    "file":"dynamic_programming/unique_paths.md"
+                },
+                {
+                    "title":"Maximum Subarray",
+                    "link":"dynamic_programming/maximum_subarray",
+                    "file":"dynamic_programming/maximum_subarray.md"
+                },
+                {
+                    "title":"Climbing Stairs",
+                    "link":"dynamic_programming/climbing_stairs",
+                    "file":"dynamic_programming/climbing_stairs.md"
+                },
+                {
+                    "title":"Triangle",
+                    "link":"dynamic_programming/triangle",
+                    "file":"dynamic_programming/triangle.md"
+                },
+                {
+                    "title":"Unique Binary Search Trees",
+                    "link":"dynamic_programming/unique_binary_search_trees",
+                    "file":"dynamic_programming/unique_binary_search_trees.md"
+                },
+                {
+                    "title":"Perfect Squares",
+                    "link":"dynamic_programming/perfect_squares",
+                    "file":"dynamic_programming/perfect_squares.md"
+                }
+            ]
         }
     ]
 }

@@ -36,6 +36,28 @@
                     "file":"array/merge_sorted_array.md"
                 }
             ]
+        },
+        {
+            "title":"Bit Manipulation",
+            "link":"bit_manipulation/",
+            "file":"bit_manipulation/README.md",
+            "child":[
+                {
+                    "title":"Missing Number",
+                    "link":"bit_manipulation/missing_number",
+                    "file":"bit_manipulation/missing_number.md"
+                },
+                {
+                    "title":"Power of Two",
+                    "link":"bit_manipulation/power_of_two",
+                    "file":"bit_manipulation/power_of_two.md"
+                },
+                {
+                    "title":"Number of 1 Bits",
+                    "link":"bit_manipulation/number_of_1_bits",
+                    "file":"bit_manipulation/number_of_1_bits.md"
+                }
+            ]
         }
     ]
 }

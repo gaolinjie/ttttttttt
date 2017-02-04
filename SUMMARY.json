@@ -72,7 +72,7 @@
                 {
                     "title":"Construct Binary Tree",
                     "link":"tree/construct_binary_tree",
-                    "file":"array/tree/construct_binary_tree.md"
+                    "file":"tree/construct_binary_tree.md"
                 },
                 {
                     "title":"Binary Tree Level Order Traversal",

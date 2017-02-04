@@ -31,7 +31,7 @@
                     "file":"array/pascals_triangle.md"
                 },
                 {
-                    "title":"Merge Sorted Array111",
+                    "title":"Merge Sorted Array",
                     "link":"array/merge_sorted_array",
                     "file":"array/merge_sorted_array.md"
                 }
@@ -56,6 +56,53 @@
                     "title":"Number of 1 Bits",
                     "link":"bit_manipulation/number_of_1_bits",
                     "file":"bit_manipulation/number_of_1_bits.md"
+                }
+            ]
+        },
+        {
+            "title":"Tree",
+            "link":"tree/",
+            "file":"tree/README.md",
+            "child":[
+                {
+                    "title":"Depth of Binary Tree",
+                    "link":"tree/depth_of_binary_tree",
+                    "file":"tree/depth_of_binary_tree.md"
+                },
+                {
+                    "title":"Construct Binary Tree",
+                    "link":"tree/construct_binary_tree",
+                    "file":"array/tree/construct_binary_tree.md"
+                },
+                {
+                    "title":"Binary Tree Level Order Traversal",
+                    "link":"tree/binary_tree_level_order_traversal",
+                    "file":"tree/binary_tree_level_order_traversal.md"
+                },
+                {
+                    "title":"Symmetric Tree",
+                    "link":"tree/symmetric_tree",
+                    "file":"array/tree/symmetric_tree.md"
+                },
+                {
+                    "title":"Same Tree",
+                    "link":"tree/same_tree",
+                    "file":"tree/same_tree.md"
+                },
+                {
+                    "title":"Balanced Binary Tree",
+                    "link":"tree/balanced_binary_tree",
+                    "file":"tree/balanced_binary_tree.md"
+                },
+                {
+                    "title":"Path Sum",
+                    "link":"tree/path_sum",
+                    "file":"tree/path_sum.md"
+                },
+                {
+                    "title":"Binary Tree Depth Order Traversal",
+                    "link":"tree/binary_tree_depth_order_traversal",
+                    "file":"tree/binary_tree_depth_order_traversal.md"
                 }
             ]
         }

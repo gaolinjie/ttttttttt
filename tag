@@ -1,0 +1,1 @@
+{"message": "\u83b7\u53d6\u6807\u7b7e\u4fe1\u606f\u6210\u529f", "result": {"star_num": 0, "english": "", "description": "", "cover": "", "followed": false, "homepage": "", "hidden": false, "name": "OS", "follow_num": 0, "id": 7, "category_id": 0, "tag_type": "tag", "post_num": 0, "parent_id": 0, "avatar": "", "point_to": 0}, "code": 0}

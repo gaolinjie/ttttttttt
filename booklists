@@ -1,0 +1,16 @@
+{
+    "message": "获取书单成功",
+    "code": 0,
+    "result": [
+        {
+            "id": 1,
+            "title":"写给大家看的机器学习书",
+            "booked": true
+        },
+        {
+           "id": 2,
+            "title":"提升效率黑科技",
+            "booked": false
+        }
+    ]
+}

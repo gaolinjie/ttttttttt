@@ -8,6 +8,9 @@
             "booked": true,
             "post_num": 12,
             "follow_num":342,
+            "author":{
+            "username":"gaolinjie"
+            },
             "cover":"https://images.unsplash.com/photo-1418833893919-fa9c83e8d69e?dpr=2&auto=format&fit=crop&w=1080&h=1620&q=80&cs=tinysrgb&crop="
         },
         {
@@ -16,6 +19,9 @@
             "booked": false,
             "post_num": 12,
             "follow_num":342,
+            "author":{
+            "username":"gaolinjie"
+            },
             "cover":"https://images.unsplash.com/photo-1499332251574-a76a01d733fc?dpr=2&auto=format&fit=crop&w=1080&h=1177&q=80&cs=tinysrgb&crop="
         },
         {
@@ -24,6 +30,9 @@
             "booked": true,
             "post_num": 12,
             "follow_num":342,
+            "author":{
+            "username":"gaolinjie"
+            },
             "cover":"https://images.unsplash.com/photo-1418833893919-fa9c83e8d69e?dpr=2&auto=format&fit=crop&w=1080&h=1620&q=80&cs=tinysrgb&crop="
         },
         {
@@ -32,6 +41,9 @@
             "booked": false,
             "post_num": 12,
             "follow_num":342,
+            "author":{
+            "username":"gaolinjie"
+            },
             "cover":"https://images.unsplash.com/photo-1499332251574-a76a01d733fc?dpr=2&auto=format&fit=crop&w=1080&h=1177&q=80&cs=tinysrgb&crop="
         },
         {
@@ -40,6 +52,9 @@
             "booked": true,
             "post_num": 12,
             "follow_num":342,
+            "author":{
+            "username":"gaolinjie"
+            },
             "cover":"https://images.unsplash.com/photo-1418833893919-fa9c83e8d69e?dpr=2&auto=format&fit=crop&w=1080&h=1620&q=80&cs=tinysrgb&crop="
         },
         {
@@ -48,6 +63,9 @@
             "booked": false,
             "post_num": 12,
             "follow_num":342,
+            "author":{
+            "username":"gaolinjie"
+            },
             "cover":"https://images.unsplash.com/photo-1499332251574-a76a01d733fc?dpr=2&auto=format&fit=crop&w=1080&h=1177&q=80&cs=tinysrgb&crop="
         }
     ]

@@ -1,22 +1,22 @@
 {
   "result": [
     {
-      "keyword": "Android",
+      "keyword": "Android"
     },
     {
-      "keyword": "前端",
+      "keyword": "前端"
     },
     {
-      "keyword": "人工智能",
+      "keyword": "人工智能"
     },
     {
-      "keyword": "iOS",
+      "keyword": "iOS"
     },
     {
-      "keyword": "Python",
+      "keyword": "Python"
     },
     {
-      "keyword": "React",
+      "keyword": "React"
     }
   ],
   "message": "获取热门关键词成功",

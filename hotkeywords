@@ -1,0 +1,24 @@
+{
+  "result": [
+    {
+      "keyword": "Android"
+    },
+    {
+      "keyword": "前端"
+    },
+    {
+      "keyword": "人工智能"
+    },
+    {
+      "keyword": "iOS"
+    },
+    {
+      "keyword": "Python"
+    },
+    {
+      "keyword": "React"
+    }
+  ],
+  "message": "获取热门关键词成功",
+  "code": 0
+}

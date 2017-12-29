@@ -1,12 +1,120 @@
-在14.5.1节，我们考虑了线性回归模型的混合，在14.5.2节，我们讨论了线性分类器的类似的混合。虽然这些简单的混合扩展了线性模型的灵活程度，包含了更复杂的（例如多峰的）预测分布，但是它们仍然具有很大的局限性。我们可以进一步增强这些模型的能力，方法是使得混 合系数本身是输入变量的函数，即    
+# 函数
 
-$$p(t|x) = \sum\limits_{k=1}^K\pi_k(x)p_k(t|x) \tag{14.53}$$    
+我们可以将**函数\(functions\)**想象成一台机器 $f$ ，每当我们向机器提供输入$x$，这台机器便会产生输出$f(x)$。
 
-这被称为专家混合（mixture of experts）模型（Jacobs et al.， 1991），其中混合系数$$\pi_k(x)$$被称为门函数（gating function），各个分量密度$$p_k(t|x)$$被称为专家（expert）。属于背后的思想是，不同的分量可以对输入空间的不同区域的概率分布进行建模（它们是在它们自己的区域做预测的“专家”），门函数确定哪个分量控制哪个区域。      
+这台机器所能接受的所有输入的集合称为**定义域\(domain\)**，其所有可能输出的集合称为**值域\(range\)**。函数的定义域和值域有着非常重要的意义，如果我们知道一个函数的定义域，便不会将不合适的输入丢给函数；知道函数的值域，便能判断一个值是否可能是这个函数所输出的。
 
-门函数$$\pi_k(x)$$必须满足混合系数通常的限制，即$$0 \leq \pi_k(x) \leq 1$$以及$$\sum_k\pi_k(x) = 1$$。因此它们可以通过例如线性softmax函数（4.104）和（4.105）表示。如果专家也是线性（回归或分类）模型，那么整个模型可以使用EM算法高效地调节，在M步骤中要使用迭代重加权最小平方（Jordan and Jacobs， 1994）。    
+## 一些函数的例子：
 
-由于门函数和专家函数使用了线性模型，因此这样的模型仍然有很大的局限性。一个更加灵活的模型时使用多层门函数，得到了专家层次混合（hierarchical mixture of experts）模型或HME模型（Jordan and Jacobs，
-1994）。为了理解这个模型的结构，假设一个混合分布，它的每个分量本身都是一个混合分布。对于无条件的混合分布，层次混合简单地等价于一个普通的混合分布。然而，当混合系数与输入相关时，层次模型就变得不普通了。HME模型也可以被看成14.4节讨论的决策树的概率版本，并且与之前一样可以通过最大似然的方式使用EM算法以 及M步骤中的IRLS算法高效计算。Bishop and Svensen (2003)基于变分推断提出了HME的一个贝叶斯方法。    
+1.**多项式\(polynomials\)**：  
+$f(x)=x^3-5x^2+9$  
+因为这是一个三次函数，当$x\rightarrow -\infty$ 时 $f(x)\rightarrow -\infty$；当$x\rightarrow \infty$ 时$f(x)\rightarrow \infty$，因此这个函数的定义域和值域都是实属集$\mathbb{R}$。
 
-我们这里不会详细讨论HME。然而，值得指出的一点是，它与5.6节讨论的混合密度网络（mixture density network）有着密切的联系。专家混合的主要的优点在于它可以通过EM算法最优化，其中每个混合分量以及门函数的M步骤涉及到一个凸优化（虽然整体的最优化不是凸优化）。相反，混合密度网络方法的一个优势是分量密度和混合系数共享神经网络的隐含单元。此外，与专家层次混合相比，在混合密度网络中，对输入空间的划分更加放松，因为划分不仅是软划分，并且不限于与坐标轴平行，而且还可以是非线性的。
+在Python中，我们这样定义上面这个函数：
+
+```
+    def f(x):
+        return x**3 - 5*x**2 + 9
+```
+
+函数定义好后，我们可以测试一下其是否正确：
+
+```
+    print f(3)
+    -9
+    print f(1)
+    5
+```
+
+读者可以自行计算一下，与Python中我们所定义函数所给出的结果比较一下。
+
+通常，将函数绘制成函数图能够帮助我们理解函数的变化。
+
+```
+    import numpy as np
+    x = np.linspace(-5, 5, num = 100)
+    y = f(x)
+    import matplotlib.pyplot as plt
+    plt.plot(x,y)
+```
+
+![01-01 plot of a polynomial function](images/01-01.png)
+
+2.**指数函数\(Exponential Functions\)**:  
+$$exp(x)=e^x$$  
+其定义域为$(-\infty,\infty)$，值域为$(0,\infty)$。在Python中，利用欧拉常数$e$可以如下方式定义指数函数：
+
+```
+    def exp(x):
+        return np.e**x
+
+    print exp(2)
+    7.3890560989306495
+```
+
+或者可以使用numpy自带的指数函数
+
+```
+    print np.exp(2)
+    7.3890560989306495
+```
+
+指数函数的函数图：
+
+```
+    plt.plot(x, exp(x))
+```
+
+![01-02 plot of a exponential function](images/01-02expfunction.png)
+
+注意到，上面的Python定义中，我们只是利用了numpy中现成的欧拉常数$e$,如果没有这个神奇的常数，我们是否就无法定义指数函数了呢？答案是否定的：
+
+```
+    def exp2(x):
+        sum = 0
+        for k in range(100):
+            sum += float(x**k)/np.math.factorial(k)
+        return sum
+
+    print exp(1), exp(2), exp(3)
+    2.718281828459045 7.38905609893 20.0855369232
+
+    print exp2(1), exp2(2), exp2(3)
+    2.7182818284590455 7.38905609893 20.0855369232
+```
+
+上面定义中的奇妙公式：  
+$$e^x = \sum_{k = 0}^{\infty}\frac{x^k}{k!}$$  
+究竟是从何而来，又为何是这样的，将是本书讨论的重点之一。
+
+3.**对数函数\(Logarithmic Functions\)**:  
+$$log_{e}(x)=ln(x)$$  
+对数函数是指数函数的反函数，其定义域为$(0,\infty)$，值域$(-\infty,\infty)$。  
+numpy为我们提供了以$2,e,10$为底的对数函数：
+
+```
+    x = np.linspace(0,10,100,endpoint = False)
+    y1 = np.log2(x)
+    y2 = np.log(x)
+    y3 = np.log10(x)
+    plt.plot(x,y1,'red',x,y2,'yellow',x,y3,'blue')
+```
+
+![01-03 plot of three logarithmic functions](images/01-03logfunction.png)
+
+4.**三角函数\(Trigonometric Functions\)**:  
+周期性是三角函数的特点之一，同时，不同三角函数的值域和定义域也需要我们牢记，下面是Python绘制的一些三角函数的函数图：
+
+```
+    plt.plot(np.linspace(-2*np.pi,2*np.pi),np.sin(np.linspace(-2*np.pi,2*np.pi)))
+```
+
+![01-04 plot of sin](images/01-04sin.png)
+
+```
+    plt.plot(np.linspace(-2*np.pi,2*np.pi),np.cos(np.linspace(-2*np.pi,2*np.pi)))
+```
+
+![01-05 plot of cos](images/01-05cos.png)
+
+这里我们没有给出对数函数和三角函数的数学表达式，没有告诉大家如何在Python中定义自己的对数函数和三角函数。这并不表述我们没法这么做，与指数函数一样，我们会在后面章节为读者揭开这些奇妙函数背后的故事。

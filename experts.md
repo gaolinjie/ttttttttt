@@ -7,7 +7,7 @@
 ## 一些函数的例子：
 
 1.**多项式\(polynomials\)**：  
-$f(x)=x^3-5x^2+9$  
+$$f(x)=x^3-5x^2+9$$  
 因为这是一个三次函数，当$x\rightarrow -\infty$ 时 $f(x)\rightarrow -\infty$；当$x\rightarrow \infty$ 时$f(x)\rightarrow \infty$，因此这个函数的定义域和值域都是实属集$\mathbb{R}$。
 
 在Python中，我们这样定义上面这个函数：
